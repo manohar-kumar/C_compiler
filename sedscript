@@ -1,0 +1,23 @@
+#!/bin/sh
+
+sed -i '/include/a #include "Parserbase.h"' Scanner.ih;
+#sed -i '/insert preincludes/a #include "headers.cc"' Parserbase.h;
+sed -i '/int parse();/a gst globalSymbolTable;\n lst* tempLocalSymbolTable;\n bool multiFunction=false,done=false;\n string calledFunction,currentFunction,chosenFunction; \n string varName; \n Type type; \n int width,offset=0;' Parser.h;
+sed -i '/insert preincludes/a  #include "structs.h" \n using namespace std;' Parserbase.h;
+
+sed -i '\|STYPE__     d_val__;| d 
+' Parserbase.h
+
+sed -i '\|typedef Meta__::SType STYPE__;| a \\tpublic: static STYPE__  d_val__;
+' Parserbase.h 
+
+sed -i '\|void Parser::print__()| i Meta__::SType ParserBase::d_val__;
+' parse.cc
+
+
+
+
+#Observe how the delimiter was changed from / to |
+#-i for inplace update
+# d for delete
+# a for append (or insert)

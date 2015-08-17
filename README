@@ -1,0 +1,4 @@
+Compiler for simulated C-machine
+
+1)flexC++ for lexical analysis
+2) BisonC++ for parsing

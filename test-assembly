@@ -1,0 +1,24 @@
+int func(int k , int n )
+{	
+int b,c;
+float a;
+b=a++;
+return a+k;
+}
+
+
+
+int main(int k)
+{	
+int d;
+float a;
+int b[10][2];
+int c[2];
+d=1;
+a=6;
+if (d<3&&a>4){
+d=7;}
+else{
+d=6;}
+a=func(5.3,d+2);
+}
